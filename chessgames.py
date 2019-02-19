@@ -7,16 +7,12 @@ from urllib.parse import urlsplit
 from urllib.parse import parse_qsl
 from urllib.request import urlopen
 from urllib.request import HTTPError
-from multiprocessing.dummy import Pool as ThreadPool 
 
 def readURL(url):
     try:
-        x = urlopen(url).read().decode("utf-8")
-	if "<html>" in x:
-            return ""
-	return x
+        return urlopen(url).read().decode("utf-8")
     except HTTPError as e:
-        time(1)
+        time(1)             # Wait for a second
         return readURL(url) # Retry until stack overflow
 
 def readGameLinks(url, cur=1):
@@ -39,7 +35,11 @@ def readGameLinks(url, cur=1):
     return links
 
 def readPGN(url):
-    return readURL(url)
+    x = readURL(url)
+    if "html" in x:
+        print(url)
+        ddsdsasdasdas
+    return x
 
 def readGame(game):
     url = 'http://www.chessgames.com/perl/nph-chesspgn?gid={0}&text=1'.format(game)
