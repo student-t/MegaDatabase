@@ -5,12 +5,19 @@ from lxml import html
 from urllib.parse import urlsplit
 from urllib.parse import parse_qsl
 from urllib.request import urlopen
+from urllib.request import HTTPError
 from multiprocessing.dummy import Pool as ThreadPool 
+
+def readURL(url):
+    try:
+        return urlopen(url).read().decode("utf-8")
+    except HTTPError as e:
+        return readURL(url)
 
 def readGameLinks(url, cur=1):
     links = []
-    page = html.fromstring(urlopen(url).read())
-    hasNext = False    
+    page = html.fromstring(readURL(url))
+    hasNext = False
     nextURL = None
     for link in page.xpath("//a"):
         if link.get("href") != None:
@@ -27,7 +34,7 @@ def readGameLinks(url, cur=1):
     return links
 
 def readPGN(url):
-    return urlopen(url).read().decode("utf-8")
+    return readURL(url)
 
 def readGame(game):
     url = 'http://www.chessgames.com/perl/nph-chesspgn?gid={0}&text=1'.format(game)
