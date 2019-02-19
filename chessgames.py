@@ -14,6 +14,8 @@ def readURL(url):
     except HTTPError as e:
         time(1)             # Wait for a second
         return readURL(url) # Retry until stack overflow
+    except:
+        return ""
 
 def readGameLinks(url, cur=1):
     links = []
