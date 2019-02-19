@@ -54,4 +54,4 @@ url = 'http://www.chessgames.com/perl/chess.pl?page=1&' + toks[1]
 # Parse all games for the player
 games = list(reversed(readGameLinks(url)))
 
-print(''.join([readGame(i) for i in games]))
+print('\n'.join([readGame(i) for i in games]))
