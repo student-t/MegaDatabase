@@ -19,7 +19,12 @@ def readURL(url):
 
 def readGameLinks(url, cur=1):
     links = []
-    page = html.fromstring(readURL(url))
+    x = readURL(url)
+    page = None
+    try:    
+        page = html.fromstring(x)
+    except:
+        return links        
     hasNext = False
     nextURL = None
     for link in page.xpath("//a"):
