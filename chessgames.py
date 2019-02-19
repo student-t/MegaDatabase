@@ -14,7 +14,7 @@ def readURL(url):
         return urlopen(url).read().decode("utf-8")
     except HTTPError as e:
         time(1)
-        return readURL(url)
+        return readURL(url) # Retry until stack overflow
 
 def readGameLinks(url, cur=1):
     links = []
