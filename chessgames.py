@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 import urllib
 from lxml import html
 from urllib.parse import urlsplit
@@ -12,6 +13,7 @@ def readURL(url):
     try:
         return urlopen(url).read().decode("utf-8")
     except HTTPError as e:
+        time(1)
         return readURL(url)
 
 def readGameLinks(url, cur=1):
