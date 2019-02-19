@@ -12,8 +12,9 @@ from multiprocessing.dummy import Pool as ThreadPool
 def readURL(url):
     try:
         x = urlopen(url).read().decode("utf-8")
-        if "<html>" in x:
+	if "<html>" in x:
             return ""
+	return x
     except HTTPError as e:
         time(1)
         return readURL(url) # Retry until stack overflow
