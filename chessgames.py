@@ -42,10 +42,7 @@ def readGameLinks(url, cur=1):
 
 def readPGN(url):
     x = readURL(url)
-    if "html" in x:
-        print(url)
-        ddsdsasdasdas
-    return x
+    return x if not "html" in x else ""
 
 def readGame(game):
     url = 'http://www.chessgames.com/perl/nph-chesspgn?gid={0}&text=1'.format(game)
