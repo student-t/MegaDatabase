@@ -58,6 +58,6 @@ python3 chessgames.py http://www.chessgames.com/perl/chessplayer?pid=130615 > "W
 python3 chessgames.py http://www.chessgames.com/perl/chessplayer?pid=11733  > "Loek van Wely.pgn"
 python3 chessgames.py http://www.chessgames.com/perl/chessplayer?pid=49796  > "Teimour Radjabov.pgn"
 python3 chessgames.py http://www.chessgames.com/perl/chessplayer?pid=102346 > "Ju Wenjun.pgn"
-python3 chessgames.py http://www.chessgames.com/perl/chessplayer?pid=12183  > "Vassily Ivanchuk .pgn"
+python3 chessgames.py http://www.chessgames.com/perl/chessplayer?pid=12183  > "Vassily Ivanchuk.pgn"
 python3 chessgames.py http://www.chessgames.com/perl/chessplayer?pid=10940  > "Alexandra Kosteniuk.pgn"
 python3 chessgames.py http://www.chessgames.com/perl/chessplayer?pid=21922  > "Paul Keres.pgn"
