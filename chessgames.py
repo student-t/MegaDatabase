@@ -23,6 +23,8 @@ def readGameLinks(url, cur=1):
     try:
         page = html.fromstring(x)
     except:
+        print(page)
+        print(x)
         print(1)
         return links
     hasNext = False
