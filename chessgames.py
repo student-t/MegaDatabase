@@ -24,6 +24,7 @@ def readGameLinks(url, cur=1):
         page = html.fromstring(x)
     except:
         print(page)
+        print(url)
         print(x)
         print(1)
         return links
