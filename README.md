@@ -6,7 +6,7 @@ This project provides simple Python scripts to merge the games into a single PGN
 
 [SmallChess](http://www.smallchess.com) uses this project to generate PGN files for it's apps.
 
-> http://www.smallchess.com/Games/
+> http://www.smallchess.com/Games
 
 ### How to use?
 
